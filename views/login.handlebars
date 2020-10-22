@@ -1,0 +1,21 @@
+<div id="contentbox">
+            <div id="notify_box">
+                <div id="notify_msg"></div>
+            </div>
+            <form  name="formLogin" id="formLogin" method="POST" action="/tamer/login">
+
+                <div class="form-field-wrapper">
+                    <input type="text"  id="login" name="login" placeholder={{language.form_field.login}} required  autocomplete="off"/>            
+                    <label for="login" >{{language.form_field.login_or_email}}</label>
+                </div>
+                <div class="form-field-wrapper">
+                    <input type="password"  id="pw" name="pw" placeholder={{language.form_field.pw}} required/>
+                    <label for="pw" >{{language.form_field.pw}}</label>
+                </div>
+                            
+                <input type="submit" id="btn_submit" class="interface-button" name="btn_submit" value={{language.form_field.login}}>
+            </form>                               
+            <a class="link" href="/tamer/register">{{language.form_field.register_redirect}}</a>
+            <br>
+            <a class="link" href="/tamer/recover">{{language.form_field.recover_redirect}}</a>
+</div>      

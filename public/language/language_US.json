@@ -1,0 +1,61 @@
+{
+  "navbar": {
+    "home" : "Home",
+    "digivice" : "Digivice",
+    "my_account" : "My Account",
+    "logout" : "Logout",
+    "log_in" : "Log in",
+    "sign_up": "Sign up",
+    "about" : "About",
+    "donate":"Donate"
+  },
+
+  "footer_text" : "Welcome to Digital World (All rights reserved to 'change it')",
+
+  "form_field":{
+    "firstname" : "First Name",
+    "lastname" : "Last Name",
+    "login" : "Login",
+    "gender": "Gender",
+    "born_date" : "Born Date",
+    "pw" : "Password",
+    "repw" : "Rewrite your Password",
+    "email" : "E-mail",
+    "reemail" : "Rewrite your E-mail",
+    "login_or_email" : "Login or Email",
+    "register_btn" : "Sign up",
+    "login_btn" : "Login",
+    "register_redirect" : "Are you new here? Click here to get your Digivice.",
+    "login_redirect" : "Already has an account? So just login.",
+    "recover_redirect" : "Do not remember your password? Click here.",
+    "messages":{
+      "fill_first_name": "Please insert your first name.",
+      "fill_last_name": "Please insert your last name.",
+      "login_in_use": "This login is already in use.",
+      "login_out_range": "The login needs to be bigger than 3 and smaller than 20 characters.",
+      "born_first": "You need to born before play",
+      "pw_out_range":"The password should be something between 8 and 20 characters.",
+      "pw_no_match":"The passwords does not match.",
+      "email_in_use": "This e-mail is already in use.",
+      "email_invalid":"This e-mail is not valid.",
+      "email_no_match":"The e-mails does not match"
+    }
+  },
+
+  "confirmation_box":{
+    "success":{
+      "main_text":"Successful sign up.",
+      "link":"Confirm your email before log in, click here."
+    },
+    "unsuccess":{
+      "main_text":"Something goes wrong.",
+      "link":"Please try it again, click here."
+    }
+    
+  },
+  "read_more":"Read More",
+
+  "about" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+  "" : "",
+  "error_msg" :  ""
+}

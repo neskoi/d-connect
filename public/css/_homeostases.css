@@ -1,0 +1,173 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+html{
+  background-color: #333;
+  color: #FFF;
+  font-family: 'Press Start 2P', cursive;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 15px;
+  height: 58px;
+  width: 100vw;
+  background-color: #111;
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav ul li{
+  display: inline-block;
+  padding: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: #FFF;
+  transition: all 0.5s ease 0s;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #444;
+}
+
+  a:hover{
+    background-color: #666;
+  }
+
+div.logo a{
+  background-color: turquoise;
+}
+
+.maindiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;  
+  height: calc(100vh - 58px);
+  overflow: hidden;
+}
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 95%;
+  width: 200px;
+  min-width: 200px;
+  background-color: #555;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+
+.content{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 95%;
+  width: 80%;
+  min-width: 700px;
+  background-color: #ddd;
+  border-radius: 20px;
+  margin: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content .control-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-around; 
+  height: 50px;
+  width: 100%;
+  background-color: black;
+}
+
+.control-bar div{
+  padding: 5px 20px;
+  background-color: turquoise;
+  border-radius: 20px;
+}
+
+.content .description{
+  height: 100px;
+  width: 300px;
+}
+
+.content form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.evolutions{
+  position: relative;
+  height: 300px;
+  width: 700px;
+  border-radius: 20px;
+  background-color: #ccc;
+  margin: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.evolutions .control-bar{
+  position: absolute;
+  top: 0;
+  height: 40px;
+  width: 100%;
+  background-color: teal;
+}
+
+input, textarea{
+  display: inline-block;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: 10px;
+  padding: 5px 10px;
+  border: none;    
+}
+
+textarea{
+  resize: none;
+}
+
+button{
+  display: inline-block;
+  height: 25px;
+  border-radius: 20px;
+  margin: 10px;
+  text-decoration: none; 
+  color: #FFF;
+  border: none;
+  background-color: #444;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 400px;
+  border-radius: 20px;
+  background-color: #111;
+}
+
+  .login input[type=text]{
+    width: 250px;
+  }
+
+  .login button{
+    width: 100px;
+  }
+

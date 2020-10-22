@@ -1,0 +1,1488 @@
+#loader{
+  background-color: black;
+  filter: none;
+  z-index: 5;
+  transition: all 1s 1s ease-in-out;
+}
+
+#loader>.loading{
+  height: 250px;
+  width: 250px;
+}
+
+#loader.hide{
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.loading-text{
+  position: absolute;
+  height: 40px;
+  width: 171px;
+  top: 140px;
+  left: 235px;
+}
+
+.loading-text:after{
+  display: block;
+  content: "L";
+  font-size: 30px;
+  animation: loading 5s linear infinite;
+}
+
+@keyframes loading{
+  0%{content: "L";}
+  10%{content: "Lo";}
+  20%{content: "Loa";}
+  30%{content: "Load";}
+  40%{content: "Loadi";}
+  50%{content: "Loadin";}
+  60%{content: "Loading";}
+  70%{content: "Loading .";}
+  80%{content: "Loading . .";}
+  90%{content: "Loading . . .";}
+}
+
+.digivice-sprite{
+  background-image: url('/resources/images/ui/icons.png');
+  background-repeat: no-repeat;
+  background-position: 32px 32px;
+}
+
+/* Elements */
+.element.Fire{
+  background-position: 0px -44.8px ;
+}
+.element.Light{
+  background-position: -22.4px -44.8px ;
+}
+.element.Ice{
+  background-position: -44.8px -44.8px ;
+}
+.element.Wind{
+  background-position: -67.2px -44.8px ;
+}
+.element.Thunder{
+  background-position: -89.6px -44.8px ;
+}
+.element.Earth{
+  background-position: 0px -67.2px ;
+}
+.element.Water{
+  background-position: -22.4px -67.2px ;
+}
+.element.Wood{
+  background-position: -44.8px -67.2px ;
+}
+.element.Steel{
+  background-position: -67.2px -67.2px ;
+}
+.element.Dark{
+  background-position: -89.6px -67.2px ;
+}
+
+/* FIELDS */
+/* .field.DA{
+  background-position: 0px 0px;
+}
+.field.UK{
+  background-position: 0px 0px;
+} */
+.field.DR{
+  background-position: 0px -22.4px;
+}
+.field.DS{
+  background-position: -22.4px -22.4px;
+}
+.field.JT{
+  background-position: -44.8px -22.4px;
+}
+.field.ME{
+  background-position: -67.2px -22.4px;
+}
+.field.NSp{
+  background-position: -89.6px -22.4px;
+}
+.field.NSo{
+  background-position: -112px -22.4px;
+}
+.field.VB{
+  background-position: -134.4px -22.4px;
+}
+.field.WG{
+  background-position: -156.8px -22.4px;
+}
+
+
+#digivice-shell{
+  user-select: none;
+  height: 380px;
+  min-width: 820px;
+  display: flex;
+  position: relative;
+  justify-content: space-between ;
+  align-items: center;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 20px 20px 35px var(--shadow-color); 
+  background-image:linear-gradient(var(--digivice-shell-color),var(--background-color),var(--digivice-shell-color));
+  transition: all 0.5s ease;
+}
+
+#online-light{
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: green;
+  animation: blink 2s  infinite linear;
+}
+
+#resize-digivice{
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 7px;
+  left: 790px;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+#resize-digivice.maximize{
+  transform: rotate(-135deg);
+}
+
+@keyframes blink{
+  50% {background-color: transparent;}
+}
+
+#digivice-menu{
+  position: absolute;
+  right: 0px;
+  background-color: var(--digivice-menu-color);
+  border: 5px solid var(--background-color);
+  border-right: none;
+  border-radius: 10px 0px 0px 10px;
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 320px;
+  width: 150px;
+  overflow: hidden;
+}
+
+#digivice-menu > div > i{
+  pointer-events: none;
+}
+
+.digivice.button{
+  height: 30px;
+  width: 100px;
+  padding: 6px;
+  align-content: center;
+  text-align: center;
+  border: 2px groove var(--detail-borders-color);
+}
+
+.digivice-detail{
+  background-color: var(--digivice-details-color);
+  border: 3px solid var(--detail-borders-color);
+  height: 20px;
+  width: 440px;
+  position: absolute;    
+  left: 100px;
+}
+
+  .digivice-detail.top{        
+      border-radius: 0px 0px 10px 10px;
+      border-top: none;
+      top: 0;
+  }
+
+  .digivice-detail.bot{        
+      border-radius: 10px 10px 0px 0px;
+      border-bottom: none;
+      bottom: 0;
+  }
+
+.screen{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  height: var(--digivice-screen-size-Y);   
+  width: var(--digivice-screen-size-X);
+  top: 30px;
+  left: 0px;
+  border-radius: 0px 10px 10px 0px;
+  border: 5px solid var(--background-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--shadow-color);
+  filter: brightness(0%);
+  overflow: hidden;
+  z-index: -1;
+  transition: filter 3s;
+}
+
+.screen.show{
+  filter: brightness(100%);
+  z-index: 0; 
+}
+
+#light-switch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 595px;
+  top: 5px;
+  border: 1px solid var(--interface-color);
+  border-radius: 50%;
+  background-color: var(--digivice-shell-color);
+}
+
+#light-switch:hover{
+  color: var(--link-hover);
+}
+
+#tamermon{      
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;     
+  transform-origin: center bottom;
+}
+
+.digimon-sprite{
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#digimon-speak{
+  display: none;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  min-width: 192px;
+  max-width: 600px;
+  height: 92px;
+  padding: 5px 10px;
+  padding-bottom: 15px;
+  background-image: url('/resources/images/ui/speech.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Status bar */
+#statusbar{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  height: 40px;
+  width: 300px;
+  background-color: var(--shadow-color);
+  border: 2px ridge var(--active-color);
+  border-radius: 0px 0px 10px 10px;
+  border-top: none;
+  top: 0px;
+  opacity: .5;
+  transition: opacity 0.2s linear;
+}
+
+  #statusbar:hover{
+      opacity: 0.9;
+  }
+
+.status{   
+  position: absolute;
+  bottom: 3px;
+  height: 32px;
+  width: 32px;   
+}
+
+.shadow-status{
+  position: absolute;
+  filter: grayscale(100%);
+}
+
+.hungry{
+  left: 22.5px;
+  background-position: 0px 0px ;
+}
+
+.energy{  
+  left: 77px;
+  background-position: -32px 0px ;
+}
+
+.joy{
+  left: 131.5px;
+  background-position: -128px 0px;
+}
+
+.health{
+  left: 186px;
+  background-position: -64px 0px ;
+}
+
+.friendship{
+  left: 240.5px;
+  background-position: -96px 0px ;
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+  @keyframes heartbeat{
+      0%{scale: 1;}
+      50%{scale: .8;}
+      100%{scale: 1;}
+  }
+
+#pendulum-selector{
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  border: 2px groove var(--detail-borders-color);
+  border-top: none;
+  border-radius: 0px 0px 10px 10px;
+  background-color: var(--shadow-color);
+  height: 10px;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+#pendulum-selector.show{
+  display: block;
+}
+
+#pendulum-selector:hover{
+  height: 110px;
+}
+
+#pendulum-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 110px;
+  width: 60px;
+}
+
+#pendulum-box > .digimon{
+  display: none;
+  height: 50px;
+  width: 50px;
+  transform: scale(0.8);
+  border: 2px solid var(--detail-borders-color);
+  border-radius: 50px;
+  pointer-events: none;
+  cursor: pointer;
+  color: transparent;
+  background-color: var(--shadow-color);
+  background-position:  -215px -215px;
+}
+#pendulum-box > .digimon.show{
+  display: block;
+}
+
+/* 
+//========================================================
+// Combat screen 
+//========================================================
+*/
+
+#digivice-combat.screen{
+  background-image: url("/resources/images/backgrounds/PVP.webp");   
+}
+
+#enemy-group{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 10px;
+  height: 230px;
+  width: 100%;
+  /* animation: cam-movement 10s ease-in-out infinite; */
+}
+
+#odds{
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 35px;
+  width: 100%;
+}
+
+#pairs{
+  display: none;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0px;    
+  width: 100%;
+}
+
+.enemy{
+  position: relative;
+  background-position-y: -288px;
+  /* remove scale, need to improve size system from the application at all */
+  width: 96px;
+  height: 96px;
+  transform: scale(1.5);
+  transform-origin: center bottom;
+  color: transparent;
+}
+
+
+
+#turn-indicator{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 230px;
+  width: 70px;
+}
+
+#turn-indicator .digimon-pic{
+  height: 50px;
+  width: 50px;
+  background-color: var(--shadow-color);
+  border: 2px groove blue;
+  border-right: 0px;
+  border-radius: 10px 0px 0px 10px;
+  background-size: 360px 600px;
+  background-position: -240px -240px;
+  background-repeat: no-repeat;
+}
+
+#turn-indicator .digimon-pic.actual{
+  transform: scale(1.2);
+  transform-origin: top right;
+}
+
+#turn-counter{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  height: 30px;
+  width: 170px;
+  border: 2px groove var(--detail-borders-color);
+  border-top: 0px;
+  border-radius: 0px 0px 10px 10px;
+  padding: 5px;
+  text-align: center;
+  
+  background-color: var(--shadow-color);
+  opacity: 0.7;
+}
+
+#turn-counter div{
+  display: inline;
+  margin: 2.5px;
+}
+
+#failure-counter{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 35px;
+  left: 60px;
+  height: 10px;
+  width: 70px;
+}
+
+#failure-counter > div{
+  height: 10px;
+  width: 10px;
+  border: 1px solid #6a0404;
+  border-radius: 50%;
+  background-image: radial-gradient(#f33 , #a00 80%);
+  filter: grayscale(1);
+}
+
+#failure-counter > div.fail{
+  filter: none;
+}
+
+.buff-status{
+  position: relative;
+  height: 22px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.buff-status > div.holder{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.buff-status > div.holder > div{
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background-size: 128px 160px ;
+  animation: buff_move 2s ease-in infinite alternate;
+  margin-right: 13.5px;
+  margin-left: 8px;
+  transform-origin: left center;
+}
+
+
+.buff-status > div.holder.bars-2{
+  animation: bars-2 6s steps(2) infinite;
+}
+
+.buff-status > div.holder.bars-3{
+  animation: bars-3 9s steps(3) infinite;
+}
+
+.buff-status > div.holder.bars-4{
+  animation: bars-4 12s steps(4) infinite;
+}
+
+@keyframes buff_move{
+  100% {transform: scale(1.4);}
+}
+
+@keyframes bars-2{
+  from{left: 0px;}
+  to{left: -300px;}
+}
+
+@keyframes bars-3{
+  from{left: 0px;}
+  to{left: -450px;}
+}
+
+@keyframes bars-4{
+  from{left: 0px;}
+  to{left: -600px;}
+}
+
+
+
+#party-hud{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 144px;
+  background-color: var(--shadow-color);
+  border: 2px groove var(--detail-borders-color);
+  border-bottom: none;
+  border-left: none;
+  border-radius: 0px 5px 0px 0px;
+}
+
+#self-hud{
+  position: absolute;
+  bottom: 0px;
+  height: 80px;
+  width: 315px;
+  padding: 10px;
+  border: 2px groove var(--detail-borders-color);
+  border-bottom: 0px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: var(--shadow-color);
+}
+
+#self-hud-interface{
+  height: 100%;
+  width: 100%;
+}
+
+#verbose{
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+#verbose.show{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#status-viwer{
+  background-color: rgba(0, 123, 224, 1);
+}
+
+.metter{
+  height: 15px;
+  width: 150px;
+  border: 2px groove var(--detail-borders-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.metter > div {
+  height: 100%;
+  width: 100%;
+}
+
+.shadow-bar{
+
+  background: linear-gradient(0deg, rgba(41,41,41,1) 0%, rgba(61,61,61,1) 50%, rgba(41,41,41,1) 100%); 
+}
+
+.hp{
+  background: linear-gradient(0deg, rgba(156,0,12,1) 0%, rgba(224,31,31,1) 50%, rgba(156,0,12,1) 100%); 
+}
+.sp{
+  background: linear-gradient(0deg, rgba(0,12,136,1) 0%, rgba(26,23,176,1) 50%, rgba(0,12,136,1) 100%); 
+}
+
+.self-digimon-info{
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 220px;
+}
+
+.self-digimon-info.party{
+  transform: scale(0.6);
+}
+
+.own-digimon-pic{
+  height: 60px;
+  width: 60px;
+  border: 2px groove var(--detail-borders-color);
+  border-radius: 5px;
+  color: transparent;
+  background-color: var(--shadow-color);
+  background-size: 432px 720px;
+  background-position: -288px -288px;
+}
+
+.own-digimon-pic:hover{
+  border: 2px groove white;
+  cursor: pointer;
+}
+
+@keyframes self-target {
+  100%{  border: 2px groove white; filter: saturate(200%);}
+}
+
+.hpsp-display{
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#combat-options{
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 10px;
+  left: 240px;
+  height: 60px;
+  width: 60px;
+}
+
+#combat-options .button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  width: 25px;    
+  border: 2px groove var(--detail-borders-color);
+  overflow: hidden;
+}
+
+#skill-list-holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -160px;
+  right: -20px;
+  height: 160px;
+  width: 0px;
+  overflow: hidden;
+  transition: width 0.5s ease-out;
+}
+
+#skill-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 105px;
+  width: 210px;
+  border: 2px groove var(--detail-borders-color);
+  border-radius: 10px;
+  background-color: var(--shadow-color);
+  white-space: nowrap;
+  overflow: hidden;  
+}
+  #skill-list div{
+    width: 95%;
+    border-radius: 10px;
+  }
+  #skill-list div:hover{
+    background: var(--shadow-color);
+    border: 2px groove var(--detail-borders-color);
+  }
+
+
+#skill:hover #skill-list-holder{
+  width: 230px;  
+}
+
+#combat-result{
+  display: none;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 150px;
+  width: 100%;
+  left: -630px;
+  background-color: var(--shadow-color);
+  z-index: 1;
+  animation: result-enter 1s ease-in-out forwards;
+}
+
+#combat-result.show{
+  display: flex;
+}
+
+@keyframes result-enter{
+  100%{left:0px;}
+}
+
+#combat-result-banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  border: 2px groove var(--detail-borders-color);
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.trophy{
+  height: 90px;
+  width: 90px;
+  background-size: contain;
+  background-image: url('/resources/images/trophy.png');
+}
+
+
+
+/* 
+//========================================================
+// Digivice Screens common style
+//========================================================
+*/
+
+.digivice-window-holder, .digivice-banner-holder{
+  position: absolute;
+  left: 5px;
+  max-width: 0px;
+  overflow: hidden;
+  transition: max-width 1s ease;
+}
+
+.digivice-window-holder{
+  top: 40px;
+}
+
+.digivice-window{
+  position: relative;
+  height: 300px;
+  width: 600px; 
+  border: 5px groove var(--detail-borders-color);
+  border-left: none;
+  border-radius: 0px 10px 10px 0px;
+  background-color: var(--interface-color);
+}
+
+.digivice-banner-holder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 140px;
+  background-color: var(--shadow-color);
+  font-family: Digicode;
+  white-space: nowrap;
+}
+
+.digivice-banner{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90px;
+  width: 630px;
+  padding: 20px;
+  border-bottom: 2px groove var(--detail-borders-color);
+  border-top: 2px groove var(--detail-borders-color);
+}
+
+#bkg-change-window-holder{
+  position: absolute;
+  height: 180px;
+  width: 0px;
+  top: 100px;
+  left: 40px;
+  border-radius: 5px;
+  border: 2px groove var(--detail-borders-color);
+  background-color: var(--interface-color);
+  overflow: hidden;
+  transition: all 1s;
+  visibility: hidden;
+}
+
+#bkg-change-window-holder > .digivice-window-close{
+  position: absolute;
+  top: 0;
+  left: 530px;
+}
+
+#bkg-list-holder{
+  position: relative;
+  height: 100%;
+  width: 440px;
+  left: 60px;
+  overflow: hidden;
+}
+
+/* move em 140px */
+#bkg-list{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 0px;
+  height: 100%;
+  transition: all 0.4s;
+}
+
+#bkg-list-left{
+  position: absolute;
+  left: 32px;
+  top: 70.5px;
+}
+
+#bkg-list-right{
+  position: absolute;
+  left: 508px;
+  top: 70.5px;
+}
+
+#bkg-change-window-holder i.sides:hover{
+  color: var(--link-hover);
+  transform: scale(1.2);
+  transition: all 0.2s;
+}
+
+#bkg-change-window-holder i.sides:active{
+  transform: scale(0.8);
+}
+
+
+#bkg-list > div{
+  height: 80%;
+  width: 120px;
+  border: 2px groove var(--detail-borders-color);
+  border-radius: 5px;
+  background-color: var(--shadow-color);
+  color: transparent;
+  margin-left: 20px;
+}
+
+#bkg-change-window-holder.show{
+  width: 560px;
+  z-index: 1;
+  visibility: visible;
+}
+
+.digivice-window-holder.show, .digivice-banner-holder.show{
+  max-width: 630px;
+  z-index: 1;
+}
+
+.digivice-banner-option{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 64px;
+  width: 64px;
+}
+
+.digivice-window-close{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border: 1px groove goldenrod;
+  border-radius: 2px;
+  border-top: 0px;
+  color: brown;
+  text-align: center;
+  z-index: 1;
+}
+
+.digivice-banner-holder > .digivice-window-close{
+  left: 610px;
+  top: 27px;
+}
+.digivice-window-holder > .digivice-window-close{
+  left: 570px;
+  top: 5px;
+}
+
+.digivice-window-close:hover{
+  color: var(--text-color);
+}
+
+.digivice-window-subspaces{
+  background-color: var(--folder-spaces);
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.6);
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+/* 
+//========================================================
+// Digimons MENU
+//========================================================
+*/
+
+.digimons-side{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px groove goldenrod;
+  background-color: var(--digivice-details-color);
+}
+ 
+#item-target-select-digimon{
+  height: 85px;
+  width: 250px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+#digimons-side{
+  position: absolute;
+  flex-direction: column;
+  top: 20px;
+  left: 0px;
+  height: 250px;
+  width: 85px;
+  border-left: none;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.party-digimon.own-digimon-pic{
+  transform-origin: center center;
+}
+
+#selected-digimon-info{
+  position: absolute;
+  top: 20px;
+  left: 95px;
+  height: 145px;
+  width: 490px;
+  font-size: 14px;
+  font-family: Quicksand;
+}
+
+#selected-digimon-info-main{
+  height: 100%;
+  width: 100%;
+}
+
+#selected-digimon-info-form{
+  position: absolute;
+  height: 105px;
+  width: 260px;
+  top: 10px;
+  left: 93px;
+}
+
+#selected-digimon-name{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 20px;
+  width: 185px;
+}
+
+#selected-digimon-lvl{
+  position: absolute;
+  top: 0px;
+  left: 190px;
+  height: 20px;
+}
+
+#selected-digimon-specie{
+  position: absolute;
+  height: 20px;
+  width: 165px;
+  top: 25px;
+  left: 0px;
+}
+
+#selected-digimon-types{
+  display: flex;
+  position: absolute;
+  height: 30px;
+  width: 75px;
+  left: 185px;
+  top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#selected-digimon-types > div{
+  height: 22.4px;
+  width: 22.4px;
+  background-size: 179.2px 224px;
+}
+
+
+#selected-digimon-stage{
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+
+#selected-digimon-personality{
+  position: absolute;
+  top: 75px;
+  left: 0px;
+}
+
+
+
+#selected-digimon-change-name{
+  display: none;
+}
+#selected-digimon-change-name.show{
+  display: inline-block;
+}
+
+.description{
+  height: 50px;
+  width: 100%;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  padding: 2px 3px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+#selected-digimon-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  height: 20px;
+  width: 260px;
+  top: 120px;
+  left: 93px;
+  font-size: 12px;
+}
+
+#selected-digimon-buttons > .button{
+  height: 20px;
+  width: 45px;
+}
+
+#selected-digimon-status{
+  position: absolute;
+  left: 5px;
+  top: 88px;
+  height: 32px;
+  width: 180px;
+  transform: scale(0.45);
+  transform-origin: left top;
+  white-space: nowrap;
+}
+#selected-digimon-status > div{
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+}
+
+#graph-holder{
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  top: 5px;
+  right: 7px;
+}
+
+#selected-digimon-pic{
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  top: 5px;
+  left: 5px;
+  color: transparent;
+  background-size: 576px 960px;
+  background-position: -384px -384px;
+}
+
+#selected-digimon-battles{
+  position: absolute;
+  height: 20px;
+  width: 60px;
+  top: 125px;
+  left: 360px;
+}
+
+#selected-digimon-victories{
+  position: absolute;
+  height: 20px;
+  width: 60px;
+  top: 125px;
+  left: 425px;
+}
+
+#selected-digimon-weight{
+  position: absolute;
+  top: 105px;
+  left: 5px;
+  height: 20px;
+  width: 80px;
+}
+
+#selected-digimon-age{
+  position: absolute;
+  top: 125px;
+  left: 5px;
+  height: 20px;
+  width: 80px;
+}
+
+.selected-digimon-values-holder{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#digimons-list{
+  position: absolute;
+  top: 175px;
+  left: 95px;
+  height: 95px;
+  width: 490px;
+  padding: 10px 11px;
+  padding-right: 48px;
+}
+
+  #digimons-list > div{
+    display: inline-block;
+    margin: 1px;
+    height: 32px;
+    width: 32px;
+    color: transparent;
+    background-position: -32px 0px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  #digimons-list > div:hover{
+    background-color: var(--shadow-color);
+    box-shadow: 0 0 0 1px var(--detail-borders-color);
+    border-radius: 5px;
+    animation: digimons-list-move 0.5s steps(3) infinite;
+  }
+  @keyframes digimons-list-move{
+    from{background-position: 0px 0px;}
+    to{background-position: 96px 0px;}
+  }
+
+#digimons-list-search{
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  top: 250px;
+  border-radius: 50%;
+  background-color: rgb(255, 210, 98);
+}
+
+#digimons-list-page-selector{
+  display: none;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20px;
+  width: 120px;
+  top: 270px;
+  left: 280px;
+  border: 1px solid var(--detail-borders-color);
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: none;
+  background-color: var(--shadow-color);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+#digimons-list-page-selector.show{
+  display: flex;
+}
+
+#digimons-list-page-selector:hover{
+  opacity: 1;
+}
+
+.page-number{
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-number > div{
+  display: none;
+}
+.page-number > i{
+  pointer-events: none;
+}
+
+.page-number.side:hover{
+  opacity: 1;
+}
+
+.page-number:hover{
+  color: var(--link-hover);
+}
+
+.page-number.side{
+  height: 13px;
+  width: 13px;
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+/* 
+//========================================================
+// Folder Menu
+//========================================================
+*/
+
+#folder-side{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 140px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#folder-side > .hr{
+  position: absolute;
+  top:49px;
+  width: 120px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#search-item{
+  position: absolute;
+  top: 15px;
+  height: 20px;
+  width: 115px;
+}
+
+#category-list{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 220px;
+  width: 100%;
+  top: 60px;
+}
+
+#category-name{
+  display: flex;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: center;
+  top: 0px;
+  left:150px;
+  height: 50px;
+  width: 435px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#category-name div{
+  font-size: 30px;
+}
+
+#item-list{
+  position: absolute;
+  top: 60px;
+  left: 150px;
+  height: 150px;
+  width: 435px;
+  padding: 5px;
+}
+
+.folder-selectables{
+  height: 20px;
+  width: 100%;
+  padding: 0px 5px;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item div{
+  pointer-events: none;
+}
+
+.folder-selectables:hover{
+  border: 1px groove goldenrod;
+  border-radius: 5px;
+  background-color: var(--shadow-color);
+}
+
+.folder-selectables:active{
+  border: 1px groove rgb(255, 210, 98);
+  border-radius: 5px;
+  background-color: rgba(24, 23, 23, 0.6);
+}
+
+.item-quantity{
+  text-align: right;
+  display: inline-block;
+  justify-content: space-between;
+  width: 40px;
+}
+
+#item-description{
+  position: absolute;
+  top: 220px;
+  left: 150px;
+  height: 60px;
+  width: 335px;
+  padding: 10px;
+  font-family: QuickSand;
+}
+
+#item-use{
+  position: absolute;
+  top: 230px;
+  left: 495px;
+  height: 40px;
+  width: 80px;
+}
+
+/* 
+//========================================================
+// Digivice PVP options 
+//========================================================
+*/
+#pvp-banner > div > div{
+  pointer-events: none;
+}
+
+#pvp-banner > div > div:nth-of-type(2){
+  display: none;
+}
+#pvp-banner > div > div:nth-of-type(2).show{
+  display: inline;
+  font-family: Quicksand;
+  font-size: 12px;
+}
+
+#pvp-x1, #pvp-x2, #pvp-x3{
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#pvp-x1.button{
+  background-image: url('/resources/icons/1X1.png');
+}
+#pvp-x2.button{
+  background-image: url('/resources/icons/2X2.png');
+}
+#pvp-x3.button{
+  background-image: url('/resources/icons/3X3.png');
+}
+
+.pvp-wait{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.loading{    
+  border: 3px solid rgba(238, 238, 238, 0.5);
+  border-bottom: 3px solid rgb(41, 75, 189);
+  border-radius: 50%;
+  background-image: none;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+  0%{transform: rotate(-360deg);}
+}
+
+/* 
+//========================================================
+// PENDULUM
+//========================================================
+*/
+.poop{
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  color: transparent;
+  background-repeat: no-repeat;
+  user-select: none;
+  animation: poop 1s steps(3) infinite;
+  background-position: -160px -160px;
+}
+
+@keyframes poop{
+  100%{background-position-x: -256px;}
+}

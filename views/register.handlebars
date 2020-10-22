@@ -1,0 +1,73 @@
+<div id="contentbox">
+    <form name="formCadastro" id="formCadastro" method="POST" action="/tamer/register">
+        <div>
+            <div class="form-field-wrapper">
+            <input type="text" name="firstname" id="firstname" placeholder="{{language.form_field.firstname}}" autocomplete="off" required/>
+            <i></i>
+            <label for="name">{{language.form_field.firstname}}</label>
+            </div>
+
+            <div class="form-field-wrapper">
+                <input type="text" name="lastname" id="lastname" placeholder="{{language.form_field.lastname}}" autocomplete="off" required/>
+                <i></i>
+                <label for="lastname">{{language.form_field.lastname}}</label>
+            </div>
+        </div>
+        
+        <div class="form-field-wrapper">
+            <input type="text" name="login" id="login" placeholder="{{language.form_field.login}}" autocomplete="off" required/>
+            <i></i>
+            <label for="login">{{language.form_field.login}}</label>
+        </div>
+
+        <div class="form-field-wrapper">
+            <div class="radio-input">
+                <input type="radio" id="female" name="gender" value="F" required>
+                Female
+                <input type="radio" id="male" name="gender" value="M">
+                Male
+                <input type="radio" id="other" name="gender" value="O">
+                Other
+            </div>
+            <label for="gender">Gender</label>
+        </div>
+        
+        <div class="form-field-wrapper">
+            <input type="date" name="born_date" id="born_date" autocomplete="off" required/>
+            <i></i>
+            <label for="born_date">{{language.form_field.born_date}}</label>
+        </div>
+
+        <div class="form-field-wrapper">
+            <input type="password" name="pw" id="pw" placeholder="{{language.form_field.pw}}" autocomplete="new-password" required/>
+            <i></i>
+            <label for="pw">{{language.form_field.pw}}</label>  
+        </div>
+
+        <div class="form-field-wrapper">
+            <input type="password" name="repw" id="repw" placeholder="{{language.form_field.repw}}" autocomplete="new-password" required/>
+            <i></i>
+            <label for="repw">{{language.form_field.repw}}</label>
+        </div>
+
+        <div class="form-field-wrapper">
+            <input type="email" name="email" id="email" placeholder="{{language.form_field.email}}" autocomplete="off" required/>
+            <i></i>
+            <label for="email">{{language.form_field.email}}</label>
+        </div>
+
+        <div class="form-field-wrapper">
+            <input type="text" name="reemail" id="reemail" placeholder="{{language.form_field.reemail}}" autocomplete="off" required/>
+            <i></i>
+            <label for="reemail">{{language.form_field.reemail}}</label>
+        </div>
+
+        <input type="submit" id="submit" class="interface-button" disabled="true" value="{{language.form_field.register_btn}}"/>
+        
+        <input type="text" id="language" name="language" style="display: none;">
+
+        <a href="/tamer/login">{{language.form_field.login_redirect}}</a>   
+                    
+        <a href="/tamer/recover">{{language.form_field.recover_redirect}}</a>
+    </form>
+</div> 

@@ -1,0 +1,20 @@
+{{#if registered}}
+  <div class="confirmation_box success">
+    <div class="confirmation_logo"></div>
+    <br>
+    <div class="confirmation_msg">
+      <h2>{{language.confirmation_box.success.main_text}}</h2>
+      <h4><a href="/tamer/login">{{language.confirmation_box.success.link}}</a></h4>
+    </div>
+  </div>
+{{else}}
+  <div class="confirmation_box unsuccess">
+    <div class="confirmation_logo"></div>
+    <br>
+    <div class="confirmation_msg">
+      <h2>{{language.confirmation_box.unsuccess.main_text}}</h2>
+      <h4><a href="/tamer/register">{{language.confirmation_box.unsuccess.link}}</a></h4>
+    </div>
+  </div>
+{{/if}}
+

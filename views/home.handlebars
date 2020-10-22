@@ -1,0 +1,16 @@
+<div id="contentbox" class="news">
+    <div>
+        {{#each post}}
+        <div class="post-div">
+            <div>
+                <div class="title-div"><a href="" class="title">{{title_en}}</a> - <a href="" class="tag">[{{Tag.name}}]</a></div>
+                <div class="post" >
+                    <div>{{post_en}}</div>
+                </div>
+            </div>
+            <div class="date"><a class="read-more" href="">{{../language.read_more}}</a>{{createdAt}}</div>
+        </div>
+        {{/each}}
+        
+    </div>
+</div>

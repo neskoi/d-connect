@@ -1,0 +1,330 @@
+ <div id="digivice-shell">  
+     <div id="loader" class="screen">
+         <div class="loading"></div>
+         <div class="loading-text"></div>
+     </div>  
+    <div id="online-light"></div>
+    <i id="resize-digivice" class="fa fa-arrow-up" aria-hidden="true"></i>
+
+    <div class="digivice-detail top"></div> 
+    <div id="digivice" class="screen show">
+        <div id="statusbar">
+            <div class="hungry status shadow-status digivice-sprite"></div>
+            <div id="hungry" class="hungry status digivice-sprite"></div>
+
+            <div class="energy status shadow-status digivice-sprite"></div>
+            <div id="energy" class="energy status digivice-sprite"></div>
+
+            <div class="joy status shadow-status digivice-sprite"></div>
+            <div id="joy" class="joy status digivice-sprite"></div>
+
+            <div class="health status shadow-status digivice-sprite"></div>
+            <div id="health" class="health status digivice-sprite"></div>
+
+            <div class="friendship status shadow-status digivice-sprite"></div>
+            <div id="friendship" class="friendship status digivice-sprite"></div>
+        </div>
+        <div id="light-switch" class="clickable-resize"><i class="far fa-lightbulb"></i></div>
+       
+        <div id="tamermon" class="digimon-sprite"> 
+            <div id="digimon-speak"></div>
+        </div>  
+
+        <div id="pendulum-selector">
+            <div id="pendulum-box">
+                <div class="digimon"></div>
+                <div class="digimon"></div>
+            </div>
+        </div>
+    </div>  
+
+    <div id="digivice-combat" class="screen">
+
+        <div id="combat-result">
+            <p class="digicode">The warm beat of your heart</p>
+            <div id="combat-result-banner">
+
+                <div class="trophy sprite"></div>
+                <div>
+                    <p class="winner">Winner:</p>
+                    <p>Finishing in:</p><p class="time">00:00</p>
+                    <a>Click to finish now</a>
+                </div>
+
+            </div>
+            <p class="digicode">will be your weapon. Believe in your heart.</p>
+        </div>
+
+        <div id="enemy-group">
+            <div id="odds">
+                <div id="" class="enemy sprite"></div>
+                <div id="" class="enemy sprite"></div>
+                <div id="" class="enemy sprite"></div>
+            </div>  
+
+            <div id="pairs" style="display: none;">
+                <div id="two" class="enemy sprite"></div>
+                <div id="four" class="enemy sprite"></div>
+            </div>
+        </div>
+
+        
+
+        <div id="party-hud">
+            <div class="self-digimon-info second party">
+                <div class="own-digimon-pic"></div>  
+                <div class="hpsp-display">
+                    <div class=" buff-status">
+                        <div class="holder"></div>
+                    </div>
+                    <div class="metter shadow-bar"><div class="digimon-hp hp"></div></div>
+                    <div class="metter shadow-bar"><div class="digimon-sp sp"></div></div>
+                </div>
+            </div>
+            <div class="self-digimon-info third party">
+                <div class="own-digimon-pic"></div>  
+                <div class="hpsp-display">
+                    <div class="buff-status">
+                        <div class="holder"></div>
+                    </div>
+                    <div class="metter shadow-bar"><div class="digimon-hp hp"></div></div>
+                    <div class="metter shadow-bar"><div class="digimon-sp sp"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="self-hud">
+            <div id="self-hud-interface">
+                <div class="self-digimon-info actual">
+                    <div class="own-digimon-pic"></div>  
+
+                    <div class="hpsp-display">
+                        <div class=" buff-status">
+                            <div class="holder"></div>
+                        </div>
+                        <div class="metter shadow-bar"><div class="digimon-hp hp"></div></div>
+                        <div class="metter shadow-bar"><div class="digimon-sp sp"></div></div>
+                    </div>
+                </div>
+                
+                
+
+                <div id="combat-options">
+                    <div id="atk" class="button" style="pointer-events: none;">
+                        <i class="fa fa-hand-rock-o" aria-hidden="true" style="transform: rotate(90deg);"></i>
+                        <i class="fa fa-hand-rock-o" aria-hidden="true" style="transform: scaleX(-1) rotate(90deg);"></i>
+                    </div>
+                    <div id="skill" class="button" style="pointer-events: none;">
+                        <i class="fas fa-fire"></i>
+                        <div id="skill-list-holder">
+                            <div id="skill-list"></div>
+                        </div>
+                    </div>
+                    <div id="folder" class="button" style="pointer-events: none;">
+                        <i class="fa fa-folder" aria-hidden="true"></i>
+                    </div>
+
+                    <div id="giveup" class="button">
+                        <i class="fa fa-flag" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="verbose"></div>
+        </div>
+        <div id="turn-counter"><div>Enemy Turn </div><div>00:00</div></div>
+        <div id="failure-counter">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="turn-indicator">
+            <div id="fourth" class="digimon-pic"></div>
+            <div id="third" class="digimon-pic"></div>
+            <div id="second" class="digimon-pic"></div>        
+            <div id="first" class="digimon-pic actual"></div>
+        </div>
+    </div>
+
+    <div id="profile-window-holder" class="digivice-window-holder">
+        <div id="close-digimons" class="digivice-window-close"><i class="fas fa-times"></i></div>
+         <div id="profile-window" class="digivice-window">
+            
+        </div>
+    </div>
+
+    <div id="training-window-holder" class="digivice-banner-holder">
+        Dreaming is the start of everything 
+        <div id="close-digimons" class="digivice-window-close"><i class="fas fa-times"></i></div>
+        <div class="digivice-banner">
+            <div class="digivice-banner-option button"><i class="fas fa-dumbbell fa-2x"></i></div>
+            <div class="digivice-banner-option button"><i class="fas fa-shield-alt fa-2x"></i></div>
+            <div class="digivice-banner-option button"><i class="fas fa-weight fa-2x"></i></div> 
+            <div class="digivice-banner-option button"><i class="fas fa-book fa-2x"></i></div>
+            <div class="digivice-banner-option button"><i class="fas fa-running fa-2x"></i></div>
+            <div class="digivice-banner-option button"><i class="fas fa-feather-alt fa-2x"></i></div>
+        </div>     
+        that's the answer I'll fly farther than anyone
+    </div>
+        
+    <div id="pvp-window-holder" class="digivice-banner-holder">
+        the most valuable weapon is inside my heart. 
+        <div id="close-digimons" class="digivice-window-close"><i class="fas fa-times"></i></div>
+        <div id="pvp-banner" class="digivice-banner">
+            <div id="pvp-x2" class="digivice-banner-option button">
+                <div class="pvp-wait"></div>
+                <div>Searching</div>
+            </div>
+
+            <div id="pvp-x1" class="digivice-banner-option button">
+                <div class="pvp-wait"></div>
+                <div>Searching</div>
+            </div>
+
+            <div id="pvp-x3" class="digivice-banner-option button">
+                <div class="pvp-wait"></div>
+                <div>Searching</div>
+            </div> 
+        </div> 
+        I won't lose. I want to become stronger 
+    </div>
+
+    <div id="digimons-window-holder" class="digivice-window-holder">
+        <div class="digivice-window-close"><i class="fas fa-times"></i></div>
+        <div id="digimons-menu" class="digivice-window">
+            <div id="digimons-side" class="digimons-side">
+                <div class="party-digimon own-digimon-pic"></div>
+                <div class="party-digimon own-digimon-pic"></div>
+                <div class="party-digimon own-digimon-pic"></div>
+            </div>
+
+            <div id="selected-digimon-info" class="digivice-window-subspaces">
+
+                <div id="selected-digimon-info-main">
+
+                    <div id="selected-digimon-pic" class="own-digimon-pic"> </div>
+                    
+                    <div id="selected-digimon-status">
+                        <div class="hungry digivice-sprite"></div>
+                        <div class="energy digivice-sprite"></div>
+                        <div class="joy digivice-sprite"></div>
+                        <div class="health digivice-sprite"></div>
+                        <div class="friendship digivice-sprite"></div>
+                    </div>
+                    <div id="selected-digimon-battles" class="selected-digimon-values-holder"><i class="fas fa-hand-rock"></i> <div>0</div></div>
+                    <div id="selected-digimon-victories" class="selected-digimon-values-holder"><i class="fas fa-trophy"></i> <div>0</div></div>
+                    <div id="selected-digimon-weight" class="selected-digimon-values-holder"><i class="fas fa-weight"></i> <div>0</div></div>
+                    <div id="selected-digimon-age" class="selected-digimon-values-holder"><i class="fas fa-birthday-cake"></i> <div>0</div></div>
+                    <div id="selected-digimon-info-form">
+                        <div id="selected-digimon-name">
+                            <label>Name: </label>
+                            <label>0</label>
+                            <i id="selected-digimon-change-name" class="fas fa-edit fa-xs"></i>
+                        </div>
+                        <div id="selected-digimon-lvl">
+                            <label>LvL: </label>
+                            <label>0</label>
+                        </div>
+
+                        <div id="selected-digimon-types">
+                            <div class="digivice-sprite"></div>
+                            <div class="digivice-sprite"></div>
+                            <div class="digivice-sprite"></div>
+                        </div>
+
+                        <div id="selected-digimon-specie">
+                            <label>Specie: </label>
+                            <label>ZeediMilleniumon</label>
+                        </div>
+                        <div id="selected-digimon-stage">
+                            <label>Stage:</label> 
+                            <label></label>
+                        </div>
+                        <div id="selected-digimon-personality">
+                            <label>Personality:</label>
+                            <label></label>
+                        </div>
+                    </div>
+                    <div id="selected-digimon-buttons">
+                        <div class="button"><i class="fas fa-fire"></i></div>
+                        <div class="button"><i class="fas fa-dna"></i></div>
+                        <div id="send-to-party" class="button">Party</div>
+                        <div class="button"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="button"><i class="fas fa-eraser"></i></div>
+                    </div>
+
+                    <div id="graph-holder">
+                        <canvas id="selected-digimon-graph">
+                        </canvas>
+                    </div>
+                </div>
+
+            </div>
+               
+            <div id="digimons-list" class="digivice-window-subspaces scrolls">
+                
+            </div>
+            <div id="digimons-list-page-selector">
+                <div class="page-number page-limit"><div>1</div><i class="fas fa-angle-left"></i></div>
+                <div class="page-number side">3</div>
+                <div class="page-number side">4</div>
+                <div class="page-number">5</div>
+                <div class="page-number side">6</div>
+                <div class="page-number side">7</div>
+                <div class="page-number page-limit"><div></div><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="folder-window-holder" class="digivice-window-holder">
+        <div class="digivice-window-close"><i class="fas fa-times"></i></div>
+        <div id="folder-window" class="digivice-window">
+            <div id="folder-side">
+                <input type="text" id="search-item" placeholder="Search Item">
+                <div class="hr"></div>
+                <div id="category-list">
+                    <div class="folder-selectables">All</div>
+                    <div class="folder-selectables">Digitama</div>
+                    <div class="folder-selectables">Disk</div>
+                    <div class="folder-selectables">Food</div>
+                    <div class="folder-selectables">Key Item</div>
+                    <div class="folder-selectables">Medicine</div>
+                    <div class="folder-selectables">Perma Disk</div>
+                </div>
+            </div>
+            <div id="category-name">
+                <h1>INVENTORY</h1>
+            </div>
+            <div id="item-list" class="digivice-window-subspaces scrolls"></div>
+            <div id="item-description" class="digivice-window-subspaces scrolls">
+                <h4></h4>
+                <h5></h5>
+            </div>
+            <div id="item-use" class="button"> USE</div>
+        </div>
+    </div>
+
+    <div id="bkg-change-window-holder">
+        <div class="digivice-window-close"><i class="fas fa-times"></i></div>
+        
+        <i id="bkg-list-left" class="fas fa-angle-left fa-2x sides"></i>
+        <div id="bkg-list-holder">
+            <div id="bkg-list">
+            </div>
+        </div>
+        <i id="bkg-list-right" class="fas fa-angle-right fa-2x sides"></i>
+    </div>
+
+    <div id="digivice-menu">
+        <div id="profile" class="digivice button"><i class="fas fa-address-card"></i></div>
+        <div id="digimons" class="digivice button"><i class="fa fa-paw" aria-hidden="true"></i></div>
+        <div id="folder" class="digivice button"><i class="fa fa-folder" aria-hidden="true"></i></div>
+        <div id="training" class="digivice button"><i class="fas fa-dumbbell"></i></div>
+        <div id="pvp" class="digivice button">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <i class="fa fa-times" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <div id="bkg-change" class="digivice button"><i class="fas fa-images"></i></i></div>
+    </div>    
+    <div class="digivice-detail bot"></div>    
+</div>

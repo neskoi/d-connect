@@ -1,0 +1,28 @@
+{
+  "navbar": {
+    "home" : "Home",
+    "digivice" : "Digivice",
+    "my_account" : "Minha Conta",
+    "logout" : "Deslogar",
+    "login" : "Login",
+    "about" : "Sobre"
+  },
+
+  "footer_text" : "Bem vindo ao Mundo Digital (Todos os direitos reservados a 'change it')",
+
+  "form_field":{
+    "name" : "Nome",
+    "login" : "Login",
+    "born_date" : "Data de Nascimento",
+    "pw" : "Senha",
+    "repw" : "Reescreva sua Senha",
+    "email" : "E-mail",
+    "reemail":"Reescreva seu E-mail",
+    "register_btn":"Cadastrar",
+    "login_redirect":"Já tem uma conta? Então é só logar",
+    "recover_redirect":"Não lembra sua senha? Clique aqui"
+  },
+  "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+  "":"",
+  "error_msg": ""
+}

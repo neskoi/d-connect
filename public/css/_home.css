@@ -1,0 +1,42 @@
+.post-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  height: 200px;
+  min-height: 200px;
+  border: 1px groove yellow;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding: 10px 10px;
+}
+
+.post-div .date{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.post-div .read-more{
+  padding: 5px;
+  border: 1px groove yellow;
+  border-radius: 10px;
+}
+
+.post{
+  height: 100px;
+  padding: 0px 10px;
+  border: 1px groove yellow;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.title-div{
+  margin-bottom: 10px;
+}
+
+.title-div .title{
+  font-size: 20px;
+}

@@ -1,0 +1,487 @@
+*{margin: 0px; padding: 0px; box-sizing: border-box; outline:0;}
+
+@font-face { font-family: 'Digicode'; src: url('/fonts/Digicode_Regular.ttf'); } 
+@font-face { font-family: 'Digifont'; src: url('/fonts/Digimon_Basic.ttf'); } 
+@font-face { font-family: 'Quicksand'; src: url('/fonts/Quicksand-Regular.ttf'); } 
+
+/*Setting usual colors*/
+:root{
+    --background-color: #005b96;
+    --button-color: #407b99;
+    --interface-color: rgba(3, 57, 108);
+    --highlight-color: #011f4b;        
+    --text-color: #ffffff;   
+    --link-hover: #fdc838;
+    --active-color:#c7981a;
+    
+    --shadow-color:rgba(0,0,0,0.7);  
+   
+    --success-color: rgba(19, 122, 9, 0.651);
+    --unsuccess-color: rgba(222, 27, 27, 0.651);
+
+    /* Digivice vars */
+    --digivice-shell-color: rgba(3, 57, 108, 0.9);
+    --digivice-menu-color: rgb(223, 177, 51);
+    --digivice-buttons: rgba(0, 123, 224, 1);
+
+    --scrollbar-color: rgba(192, 173, 6, 1);  
+    --scrollbarthumb-color: rgba(28, 39, 196, 1); 
+
+    --digivice-screen-size-X: 640px;
+    --digivice-screen-size-Y: 320px;
+
+    --detail-borders-color: rgb(189, 140, 5);
+    --digivice-details-color: rgb(122, 90, 1);
+
+    /* Digivice Combat */
+    --hud-hp-color:rgb(163, 1, 14);
+    --hud-sp-color:rgb(20, 42, 105);
+
+    /* BAG COLORS */
+    --bag-screen: #454544;
+    --bag-spaces: #0b2d60;
+}
+
+/* SweetAlert Theming */
+.swal-footer, .swal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/*Generic configuration of elements*/
+html{
+    height: 100vh;
+}
+
+body{    
+    background-image:linear-gradient(var(--interface-color),var(--background-color),var(--interface-color));
+    height: calc(100vh - 162px);
+    overflow: hidden;
+    width: 100vw;
+    font-family: 'Digifont';
+    color:var(--text-color);
+}
+
+#banner{    
+    background-color: var(--background-color);
+    background-image: url("/resources/LOGO.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 80px;
+ }
+ 
+nav{   
+    border-radius: 5px 5px 10px 10px; 
+    width: 100vw;
+    min-width: 1200px;    
+    overflow: hidden;
+    max-height: 51px;
+    padding-right: 20px;
+    user-select: none;
+}
+    nav div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    nav a{
+        display: block;
+        padding: 15px 15px;    
+    }    
+    nav a:hover{
+        box-shadow: inset -11px 0px 0px -10px var(--background-color), inset 11px 0px 0px -10px var(--background-color);
+        background-image: linear-gradient(var(--interface-color),var(--highlight-color),var(--interface-color));
+    }  
+    nav ul{
+        display: flex;
+        list-style: none;
+    }  
+    
+.clickable-resize:hover{
+    transition: transform 0.3s linear;
+}
+
+.clickable-resize:hover{
+  transform: scale(1.1);
+}
+
+.clickable-resize:active{
+    transform: scale(0.9);
+    filter: brightness(60%);
+}
+
+
+
+#online-tamers-count{
+    
+    width: 120px;
+    margin-right: 10px;
+}
+
+#online-tamers-count > label{
+    text-align: right;
+    width: 60px;
+}
+
+#money-show, #online-tamers-count{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    float: right;
+    border: 1px solid var(--background-color);
+    border-radius: 5px;  
+    height: 30px;  
+    padding: 0px 10px;
+    box-shadow: inset 0 0 1em black;
+}
+
+#money-show{
+    width: 280px; 
+}
+
+#money-show > div{
+    width: 115px;
+}
+
+#money-show label{
+    text-align: right;
+    width: 80px;
+}
+
+
+#volume-div{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    margin: 0px 10px
+}
+
+#volume-div.show{
+    display: flex;
+}
+
+.slider{
+    width: 150px;
+    height: 5px; 
+    background: #d3d3d3; 
+    outline: none; 
+    opacity: 0.7; 
+    border-radius: 10px;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb, .slider::-moz-range-thumb {
+    width: 10px; 
+    height: 10px; 
+    background: var(--highlight-color);
+    border-radius: 50%;
+    cursor: pointer; 
+}
+.slider:hover{
+    opacity: 1;
+}
+
+.vl{
+    height: 90%;
+    max-width: 1px;
+    background-color: #262626;
+    opacity: 0.6;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    bottom: 0;
+    left: 0;
+    text-align: center;    
+    box-shadow: 0px 0px 2px black;
+    border: 1px solid var(--background-color);
+    border-radius: 10px 10px 0px 0px;
+    background-image: linear-gradient(var(--interface-color),var(--background-color),var(--interface-color));
+    user-select: none;
+}
+    footer label{
+        display: block;
+        margin: 5px;
+    }
+
+#flag-position{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    border-radius: 2px;
+    border: 1px solid var(--digivice-shell-color);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+#flag-position:hover{
+    border-color: var(--detail-borders-color)
+}
+
+#flag-position:active{
+    filter: brightness(50%);
+}
+
+::-webkit-input-placeholder {
+    font-family: Quicksand;
+}
+:-moz-placeholder {
+    font-family: Quicksand;
+}
+::-moz-placeholder {
+    font-family: Quicksand;
+}
+
+
+/*Multi use classes */
+.button{
+    background-color: rgb(10, 96, 167);
+    transition: background-color 0.2s linear;
+    border: 2px groove var(--detail-borders-color);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+    .button:hover{
+        background-color:  rgb(35, 119, 197);
+    }
+    .button:active{
+        background-color:  rgb(30, 92, 172);
+    }
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+    form > a{
+        margin: 10px;
+    }
+
+    form > .interface-button{
+        display: inline-block;
+        height: 40px;
+        width: 150px;
+        border: none;
+        border-radius: 5px;
+        color: var(--text-color);
+        background-color: var(--button-color);
+        margin: 10px;
+        text-decoration: none; 
+        font-family: Digifont;
+        font-size: 18px;
+        cursor: pointer; 
+        transition: all 0.2s ease;    
+    }
+
+    form > .interface-button:hover{
+        background-color: var(--highlight-color);
+        color: var(--link-hover);
+    }
+
+    form > .interface-button:disabled{
+        background-color: gray;
+        pointer-events: none;
+    }
+
+form > div > .form-field-wrapper {
+    display: inline-block;
+    width: 150px;
+}
+
+.form-field-wrapper{
+    position: relative;
+    width: 315px;
+    height: 40px;
+    margin: 10px 5px;
+}
+
+.form-field-wrapper > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 5px;
+    right: 5px;
+}
+
+.form-field-wrapper > label{
+    position: absolute;
+    height: 20px;
+    top: -10px;
+    left: 10px;
+    padding: 0px 5px;
+    color: rgb(213, 157, 27); /* definir uma var de cor todo */
+    background-color: var(--interface-color);
+}
+
+.form-field-wrapper > input, .radio-input{
+    color: white;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--detail-borders-color);
+    border-radius: 5px;
+    padding: 0px 15px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.radio-input{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Quicksand;
+}
+
+input[type=date]{
+    text-align: center;
+    font-family: Quicksand;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;   
+    transition: all 0.2s ease;  
+}
+
+    a:hover{
+        color: var(--link-hover);
+    }
+
+.bars{
+    background-image:linear-gradient(var(--interface-color),var(--background-color),var(--interface-color));
+    border-bottom: 1px solid var(--background-color);
+    box-shadow: 1px 1px 3px black; 
+}
+
+/* Scroll bar definition*/
+.scrolls{
+    scrollbar-color: transparent transparent;
+    scrollbar-width: none;
+}
+    ::-webkit-scrollbar {
+        display: none;
+        width: 0px;
+        scrollbar-width: thin;
+    }    
+    ::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 0px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: transparent; 
+        border-radius: 0px;
+  }
+
+/* loading */
+
+/*Aligment Div, takes all space btw header end footer*/ 
+#maindiv{  
+    background-image: url("/resources/circuit-board.png");
+    animation: movingbackground 60s linear infinite;
+    width: 100%;    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+}
+
+@keyframes movingbackground{
+    0% {background-position-x: 0%; background-position-y: 0%;}
+    50% {background-position-x: 100%; background-position-y: 150%;}
+    100% {background-position-x: 200%; background-position-y: 300%;}
+}
+
+
+
+.digicode{
+    font-family: 'Digicode';
+}
+
+.hide-text{
+    color:transparent;
+}
+/*hold elements on page, the central flying screen*/
+#contentbox{
+    background-color:var(--interface-color); 
+    border-radius: 7px;
+    box-shadow: 20px 20px 35px var(--shadow-color); 
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    text-align: center; 
+    justify-items: center;
+    align-items: center;
+    min-width: 400px;
+    max-height: calc(100vh * 0.7);
+    padding: 20px; 
+    margin: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+
+
+/*plus to contentbox.success for cadastration*/
+@keyframes confirmation-rotation{
+    0% {transform: rotate(-180deg); box-shadow: none;}
+    100%{transform: rotate( 0deg); box-shadow: 10px var(--shadow-color);}
+}
+
+.confirmation_box{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    box-shadow: 0px 20px 35px 5px var(--shadow-color);
+    padding: 20px 20px;
+    margin: 0px;
+    background-color: var(--background-color);
+    animation: confirmation-rotation 1s linear;
+}
+
+    .confirmation_box.success{
+        border: 20px solid var(--success-color);
+    }
+
+    .confirmation_box.unsuccess{
+        border: 20px solid var(--unsuccess-color);
+    }
+
+/*logo of website on success screen*/
+.confirmation_logo{
+    width: 300px;
+    height: 135px;    
+    background-image: url("/resources/images/ui/d-connect.png");
+    background-repeat: no-repeat;  
+    background-size: contain;  
+}
+
+
+
+
+
+
+
+
+
+

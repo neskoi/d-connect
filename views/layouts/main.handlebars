@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="/resources/images/ui/favicon.ico"/>
+    <link rel="stylesheet" href="/css/_style.css">
+    <link rel="stylesheet" href="/css/_chat.css">
+    <link rel="stylesheet" href="/css/_freakflags.css">
+
+    {{#each css}}
+        <link rel="stylesheet" href="/css/{{this}}">
+    {{/each}}
+    <title>D-Connect</title>
+</head>
+<body oncontextmenu="return false;">
+    <header>
+        <div id="banner">
+        </div>  
+            <nav class="bars">
+                <div>
+                    <ul>
+                        <li><a href="/">{{language.navbar.home}}</a></li>                    
+                        {{#if user}}
+                            <li><a href="/tamer/digivice">{{language.navbar.digivice}}</a></li>
+                            <li><a href="/tamer/account/:id">{{language.navbar.my_account}}</a></li> 
+                            <li><a href="/tamer/logout">{{language.navbar.logout}}</a></li> 
+                        {{else}}
+                            <li><a href="/tamer/login">{{language.navbar.log_in}}</a></li>
+                            <li><a href="/tamer/register">{{language.navbar.sign_up}}</a></li>                        
+                        {{/if}}
+                        
+                        <li><a href="/about">{{language.navbar.about}}</a></li>
+                        <li><a href="/donate">{{language.navbar.donate}}</a></li>
+
+                    </ul>
+                    
+                    <div>
+                        <div id="volume-div" {{#if user}}class="show"{{/if}}>
+                            <i id="volume-ico" class="fa fa-volume-off" aria-hidden="true"></i>
+                            <input type="range" id="volume-control" class="slider">
+                        </div>
+                    <div id="online-tamers-count"><label>0</label><i class="fas fa-users"></i></div>
+                    {{#if user}}
+                        <div id="money-show">
+                            <div>
+                                <label id="bit-amount">0</label>
+                                <i class="fa fa-microchip" aria-hidden="true"></i>
+                            </div>
+                            <div class="vl"></div>
+                            <div>
+                                <label id="docoin-amount">0</label>
+                                <i class="fab fa-btc"></i>
+                            </div>
+                        </div>
+                    {{/if}}
+                    </div>
+
+                </div>
+            </nav> 
+    </header>
+    <div id="maindiv" class="scrolls">
+        {{{body}}}
+        {{#if user}}
+        <div id="chat-box">
+            <div id="chat-top">Chat</div>
+            <div id="chat-body">
+                <div class="chat-message">
+                </div>
+            </div>
+            <form id="chat-send">
+                <input type="text" id="chat-input" autocomplete="off"/>
+            </form>
+        </div>
+        {{/if}}
+
+    </div>
+    <footer>
+          <label>{{language.footer_text}}</label>
+          <span id="flag-position" class=""></span>                  
+    </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="https://kit.fontawesome.com/5441b6301a.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <script src="/js/stylehelper.js" type="text/javascript"></script>
+        {{#each js}}
+             <script src="/js/{{this}}" type="text/javascript"></script>
+        {{/each}}
+    </body>
+</html>
